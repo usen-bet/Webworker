@@ -1,0 +1,181 @@
+$breakpoints: (
+  "mob": "(max-width: 300px)",
+  "sm": "(max-width: 500px)",
+  "tab" : "(max-width: 1000px)",
+  "semi" : "(max-width: 690px)",
+    "md": "(min-width: 601px) and (max-width: 1000px )",
+    "md-lg": "(min-width:601px)" and "(max-width:770px)",
+    "lg-md": "(min-width:770px)" and "(max-width:1000px)", 
+    "lg": "(min-width:1001px )",  
+    "lg-inf": "(min-width:1001px ) and (max-width:1500px)",
+    "inf-lg": "(min-width:1501px ) and (max-width:2000px)"
+
+);
+
+@mixin breakpoint($user-value) {
+    $my-map: map-get($breakpoints, $user-value);
+    @if $my-map {
+        @media (#{$my-map}) {
+            @content;
+        }
+    }@else {
+        @error "breakpoint #{$user-value} Not Working"
+    }
+};
+
+
+///Hamburger Menu
+.hamburger {
+    height: 20px;
+    width: 50px;
+    cursor: pointer;
+    display: none;
+    z-index: 9999;
+    @include breakpoint(sm) {
+    display: block;
+    }
+    div {
+      @include breakpoint(sm) {
+        width:40px ;
+        height: 4px;
+        background-color: #ABF5F5;  
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+    
+  }
+
+  .white{
+    background-color: white;
+  }
+
+  .active {
+    z-index: 9999;
+    height: 20px;
+    width: 50px;
+    margin-top: 10px;
+      div {
+        @include breakpoint(tab) {
+          width:40px;
+          height: 4px;
+          background-color: #ABF5F5;  
+      }
+      
+    }
+  }
+
+  .one{
+    animation-name: example;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+  .three {
+    animation: examples;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  .two {
+     display: none;
+  }
+
+  .black {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #08111E;
+    z-index:9;
+    top: 45px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .linkers {
+    display: block;
+    position: relative;
+    top: -50px;
+  }
+
+  .Link-list {
+    li {
+      font-size: 32px;
+      cursor: pointer;
+      text-align: center;
+      margin: 20px 10px;
+      &:hover {
+        color: #ABF5F5;
+      
+      }
+    }
+  }
+
+  .white {
+    background-color: white !important;
+  }
+
+  @keyframes example {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(45deg);
+        position: relative;
+        top:2px;
+    }
+  }
+
+  @keyframes examples{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-45deg);}
+  }  
+
+  @keyframes reverseexample {
+    from {transform: rotate(45deg);}
+    to {transform: rotate(0deg);
+        position: relative;
+        top:0px;
+    }
+  }
+
+  @keyframes reverseexamples{
+    from {transform: rotate(-45deg);}
+    to {transform: rotate(0deg);}
+  } 
+  
+  @keyframes appear{
+    from {display: none;}
+    to {display: block;}
+  }  
+
+  .ham-top {
+    animation-name: reverseexample;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  .ham-mid {
+    animation-name: appear;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+ }
+
+ .ham-bottom {
+  animation: reverseexamples;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+ }
+
+ .socials {
+  display: flex;
+  position: relative;
+  top: -50px;
+ }
+
+ .social-icon {
+  margin: 10px;
+  font-size: 32px;
+  &:hover {
+    color: #ABF5F5;
+    cursor: pointer;
+  }
+ } 

@@ -1,0 +1,309 @@
+$breakpoints: (
+    "mob": "(max-width: 300px)",
+    "sm": "(max-width: 500px )",
+    "md": "(min-width: 601px) and (max-width: 1000px )",
+    "md-lg": "(min-width:601px)" and "(max-width:770px)",
+    "lg-md": "(min-width:770px)" and "(max-width:1000px)", 
+    "lg": "(min-width:1001px )",  
+    "lg-inf": "(min-width:1001px ) and (max-width:1500px)",
+    "inf-lg": "(min-width:1501px ) and (max-width:2000px)"
+
+);
+
+@mixin breakpoint($user-value) {
+    $my-map: map-get($breakpoints, $user-value);
+    @if $my-map {
+        @media (#{$my-map}) {
+            @content;
+        }
+    }@else {
+        @error "breakpoint #{$user-value} Not Working"
+    }
+};
+
+body{
+    background-color:#08111E;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 85% 70%;
+    background-position: center;
+    color: var(--text-color);
+    overflow: hidden;
+ }
+ 
+ .tr {
+    top:-12px;
+    left:307px;
+    position:relative;
+    animation-name: infinite4;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    height: fit-content;
+    width:fit-content;
+    @include breakpoint(mob) {
+        top: 52px;
+        left: 86px;
+    }
+}
+
+.tl {
+    top: -187px;
+    left:-476px;
+    position:relative;
+    animation-name: infinite2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    height: fit-content;
+    width:fit-content;
+    @include breakpoint(mob) {
+        top: -5px;
+        left: -118px;        
+    }
+}
+
+.br {
+    top:100px;
+    left:529px;
+    position:relative;
+    animation-name: infinite3;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    height: fit-content;
+    width:fit-content;
+    @include breakpoint(mob) {
+        top: 12px;
+        left: 86px;        
+    }
+}
+
+.bm {
+    top:22px;
+    left:221px;
+    position:relative;
+    animation-name: infinited;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    height: fit-content;
+    width:fit-content;
+    @include breakpoint(mob) {
+        top: 12px;
+        left: 86px;        
+    }
+}
+
+.tm {
+    top: -142px;
+    left:-663px;
+    position:relative;
+    animation-name: infinitel;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    height: fit-content;
+    width:fit-content;
+    @include breakpoint(mob) {
+        top: 12px;
+        left: 86px;        
+    }
+}
+
+.bl {
+    top: 20px;
+    left:-305px;
+    position:relative;
+    animation-name: infinite;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+    height: fit-content;
+    width:fit-content;
+    @include breakpoint(mob) {
+        top:-45px;
+        left: -141px;        
+    }
+}
+
+@keyframes infinite {
+    0% {
+        transform: translateX(0%);
+      }
+    20% {
+        transform: translateY(0%)
+      }
+    40% {
+        transform: translateX(150%);  
+      } 
+    60% {
+        transform: translateY(-70%);  
+    }  
+    80%{
+        transform: translateX(-150%);  
+    }
+    100% {
+        transform: translateY(0%);   
+    }
+  }
+
+  @keyframes infinited {
+    0% {
+        transform: translateY(0%);
+      }
+    20% {
+        transform: translateX(0%)
+      }
+    40% {
+        transform: translateY(50%);  
+      }
+    50% {
+        transform: translateX(-20%);
+    } 
+    60% {
+        transform: translateX(40%);  
+    }  
+    80%{
+        transform: translateY(0%);  
+    }
+    100% {
+        transform: translateX(0%);   
+    }
+  }  
+
+  @keyframes infinitel {
+    0% {
+        transform: translateY(0%);
+      }
+    20% {
+        transform: translateX(0%)
+      }
+    40% {
+        transform: translateX(50%);  
+      }
+    60% {
+        transform: translateY(40%);  
+    }  
+    80%{
+        transform: translateY(0%);  
+    }
+    100% {
+        transform: translateX(0%);   
+    }
+  }  
+
+  @keyframes infinite4 {
+    0% {
+        transform: translateX(0%);
+      }
+    20% {
+        transform: translateY(0%)
+      }
+    40% {
+        transform: translateX(50%);  
+      } 
+    60% {
+        transform: translateY(-30%);  
+    }  
+    80%{
+        transform: translateX(0%);  
+    }
+    100% {
+        transform: translateY(0%);   
+    }
+  }
+
+  .head {
+    margin:auto;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    position: fixed;
+    h1 {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;       
+        height: fit-content;
+        width: fit-content;
+        z-index: 9;
+        margin: auto;
+        .fw {
+            height: fit-content;
+            width: fit-content;
+            font-size: 40px;
+            font-size: 36px;
+            @include breakpoint(mob) {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+        .sw {
+            height: fit-content;
+            width: fit-content;
+            margin-top: -30px;
+            font-size: 96px;
+            
+            @include breakpoint(sm) {
+                font-size: 17vw;
+            }
+            @include breakpoint(mob) {
+                font-size: 30px;
+                margin-bottom: 37px;
+            }
+        }
+        .tw {
+            height: fit-content;
+            width: fit-content;
+            margin-top: -60px;
+            font-size: 96px;
+            @include breakpoint(sm) {
+                font-size: 17vw;
+            }
+            @include breakpoint(mob) {
+                font-size: 30px;
+            }
+        }
+    }
+  }
+
+  /////Header
+  
+
+  ////Page
+  .main {
+    background-color: #091324;
+    width: 70vw;
+    height: 90vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    padding-top: 100px;
+
+    p {
+       margin: 0px 50px;
+       font-size: 36px;
+       font-weight: normal;
+       font-family: helvetinorm;
+       @include breakpoint (sm) {
+        font-size: 20px;
+       }
+       @include breakpoint(md) {
+        font-size: 24px;        
+       }
+    }
+  }
+
+  .title2 {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    font-size: 56px;
+    font-weight: 800;
+    font-family: helvetibold;
+    margin: 50px; 
+    line-height: 77px;   
+  }

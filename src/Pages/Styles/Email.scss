@@ -1,0 +1,127 @@
+$breakpoints: (
+    "mob": "(max-width: 300px)",
+    "sm": "(max-width: 500px )",
+    "md": "(min-width: 601px) and (max-width: 1000px )",
+    "md-lg": "(min-width:601px)" and "(max-width:770px)",
+    "lg-md": "(min-width:770px)" and "(max-width:1000px)", 
+    "lg": "(min-width:1001px )",
+    "inf": "(min-width:1201px )",  
+    "lg-inf": "(min-width:1001px) and (max-width:1500px)",
+    "inf-lg": "(min-width:1501px ) and (max-width:2000px)"
+
+);
+
+@mixin breakpoint($user-value) {
+    $my-map: map-get($breakpoints, $user-value);
+    @if $my-map {
+        @media (#{$my-map}) {
+            @content;
+        }
+    }@else {
+        @error "breakpoint #{$user-value} Not Working"
+    }
+};
+
+textarea {
+    resize: none;
+}
+
+form {
+    display: grid;
+    place-content: center;
+}
+
+form h1 {
+    text-align: center;
+    position: relative;
+    top: 10px;
+    font-size: 30px;
+}
+
+.clap {
+    @include breakpoint(inf) {
+        display: none;
+    }
+}
+
+.pick {
+    @include breakpoint(inf) {
+        animation-name: stop !important;
+        left: 130px;
+        position: relative;
+    }
+}
+
+.mains {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(inf) {
+        width: 50% !important;
+    }
+}
+
+.Text {
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
+    height: 30px;
+    padding: 5px;
+    @include breakpoint(inf) {
+        padding: 20px;
+        width: 450px;
+    }
+}
+
+
+input {
+    font-family: helvetiLight;
+    color: black;
+    font-size: 12px;
+    &::placeholder {
+        font-size: 12px;
+        font-family: helvetiLight;
+        opacity: 0.75;
+    }
+    &:focus {
+        outline: none;
+        border: none;
+    }
+}
+
+#email {
+    color: black;
+    font-size: 12px;
+    border-radius: 10px;
+    font-family: helvetiLight;
+    margin-top: 10px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    @include breakpoint(inf) {
+        padding: 15px 20px;
+    }
+    &:focus {
+        outline: none;
+        border: none;
+    }
+    &::placeholder {
+        font-family: helvetiLight;
+        font-size: 12px;
+        opacity: 0.75;
+    }
+}
+
+.email-btn {
+    margin: 20px auto;
+    width: 105px;
+    height: 35px;
+    background-color: #abf5f5;
+    color: #0a1526;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    &:hover {
+        cursor: pointer;
+        background-color: #428585;
+    }
+}

@@ -1,0 +1,247 @@
+$breakpoints: (
+    "mob": "(max-width: 300px)",
+    "sm": "(max-width: 500px )",
+    "tab": "(max-width: 1000px)",
+    "md": "(min-width: 601px) and (max-width: 1000px )",
+    "md-lg": "(min-width:601px)" and "(max-width:770px)",
+    "lg-md": "(min-width:770px)" and "(max-width:1000px)", 
+    "lg": "(min-width:1001px )",  
+    "lg-inf": "(min-width:1001px ) and (max-width:1500px)",
+    "lgs-inf": "(min-width:1200px ) and (max-width:1500px)",
+    "inf-lg": "(min-width:1501px ) and (max-width:2000px)"
+
+);
+
+@mixin breakpoint($user-value) {
+    $my-map: map-get($breakpoints, $user-value);
+    @if $my-map {
+        @media (#{$my-map}) {
+            @content;
+        }
+    }@else {
+        @error "breakpoint #{$user-value} Not Working"
+    }
+};
+
+.icon-arrow {
+    color: white;
+    position: fixed;
+    top: 50%;
+    right: 0px ;
+    transform: rotate(180deg);
+    width: 23px;
+    margin: 0px 20px;
+    cursor:pointer;
+}
+
+.icon-arrow2 {
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    transform: rotate(180deg);
+    width: 23px;
+    margin: 0px 20px;
+    cursor:pointer;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+}
+
+.project-space {
+   width: 80vw;
+   margin: auto;
+   height: 90vh;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   border-radius: 20px;
+   background-color: #091324;
+}
+
+.project-page {
+    width: 100%;
+    height: 90vh;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+.project-work {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.white-bg {
+    width: 90%;
+    height: 65%;
+    background-color: white;
+    position: relative;
+    left: -45%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(tab) {
+        height: 50%;
+    }
+}
+
+.reg-bg {
+    width: 97%;
+    background-color: #091324;
+    height:93%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    @include breakpoint(tab) {
+        width: 95%;
+    }
+}
+
+.reg-bg h1 {
+    font-size: 55px;
+    margin-bottom: 0px;
+}
+
+.reg-bg button {
+    margin: 0px 20px;
+    background-color: white;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: #091324;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: #132037;
+        color: white;
+    }
+}
+
+.small {
+    height: 120px;
+    width:fit-content;
+    position: absolute;
+}
+
+.top-mid {
+    @include breakpoint(lgs-inf) {
+        display: block;
+        left: 150%;
+        position: relative;
+    
+    animation-name: infinite4;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    }
+    @include breakpoint(inf-lg) {
+        display: block;
+        left: 150%;
+        position: relative;
+    
+    animation-name: infinite4;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    }
+}
+
+.bottom-mid {
+    @include breakpoint(lgs-inf){
+        display: block;
+        right: 190%;
+        position: relative;
+        animation-name: infinite4;
+        animation-duration: 2s;
+        animation-iteration-count: infinite; 
+    }
+    @include breakpoint(inf-lg) {
+        display: block;
+        right: 190%;
+        position: relative;
+        animation-name: infinite4;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+    
+}
+
+.top-lefts {
+    display: none;
+    @include breakpoint(inf-lg) {
+        display: block;
+        position: relative;
+        left: 150%;
+        animation-name: infinite4;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+    
+    @include breakpoint(lgs-inf){
+        display: block;
+        position: relative;
+        left: 150%;
+        animation-name: infinite4;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        
+    }
+}
+
+.bottom-lefts {
+    position: relative;
+    top: -290px;
+    right: 190%;
+    animation-name: infinite4;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    display: none;
+    @include breakpoint(inf-lg) {
+        display: block;
+    }
+    @include breakpoint(lgs-inf) {
+        display: block;
+    }
+}
+
+@keyframes infinite4 {
+    0% {
+        transform: translateX(0%);
+      }
+    20% {
+        transform: translateY(0%)
+      }
+    40% {
+        transform: translateX(50%);  
+      } 
+    60% {
+        transform: translateY(-30%);  
+    }  
+    80%{
+        transform: translateX(0%);  
+    }
+    100% {
+        transform: translateY(0%);   
+    }
+  }
+ 
+  .tip-rop {
+    @include breakpoint(lgs-inf) {
+        opacity: 0;
+    }
+  }
+
+  .tip-top {
+    @include breakpoint(lgs-inf) {
+        opacity: 0;
+    }
+  }
+
+  .language {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .Icon-l-size {
+    font-size:20px;
+    margin: 0px 5px;
+  }

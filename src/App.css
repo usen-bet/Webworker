@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --toastify-color-dark: #0A1526 !important;
+    --toastify-color-progress-dark: #ABF5F5 !important;
+}
+
+@font-face {
+    font-family: Done;
+    src: url(./Fonts/helvetica-255-cufonfonts/Helvetica-Bold.ttf);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    height: fit-content;
+    font-family: Done;
+}
+
+:root {
+    --bg-color:#0A1526;
+    --text-color: white;
+}
+
+h1 {
+    height: fit-content;
+    margin: -55px;
+}
+
+.title {
+  margin: auto;
+}
+
+.t1{ 
+   font-size: 80px;
+}
+
+.t2{
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.head{
+   position: absolute;
+   transform: translate(-50%, -50%);
+   left: 50%;
+   top: 50%;
+   text-align: center;
+}

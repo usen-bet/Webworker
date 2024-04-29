@@ -1,0 +1,197 @@
+$breakpoints: (
+  "mob": "(max-width: 300px)",
+  "sm": "(max-width: 500px)",
+  "tab" : "(max-width: 1000px)",
+  "x-tab" : "(min-width: 1000px)",
+  "semi" : "(max-width: 690px)",
+    "md": "(min-width: 601px) and (max-width: 1000px )",
+    "md-lg": "(min-width:601px)" and "(max-width:770px)",
+    "lg-md": "(min-width:770px)" and "(max-width:1000px)", 
+    "lg": "(min-width:1001px )",  
+    "lg-inf": "(min-width:1001px ) and (max-width:1500px)",
+    "inf-lg": "(min-width:1501px ) and (max-width:2000px)"
+
+);
+
+@mixin breakpoint($user-value) {
+    $my-map: map-get($breakpoints, $user-value);
+    @if $my-map {
+        @media (#{$my-map}) {
+            @content;
+        }
+    }@else {
+        @error "breakpoint #{$user-value} Not Working"
+    }
+};
+
+
+///Hamburger Menu
+.hamburger {
+  z-index: 9999;
+    height: 20px;
+    width: 50px;
+    cursor: pointer;
+    display: none;
+    @include breakpoint(tab) {
+    display: block !important;
+    }
+    div {
+      @include breakpoint(tab) {
+        width:40px ;
+        height: 4px;
+        background-color: #ABF5F5;  
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+    
+  }
+
+  // .hover-under::after {
+  //   content: '';
+  //   width: 40px;
+  //   height: 40px;
+  //   background-color: #ABF5F5;
+  // }
+
+  // .hover-underline-animation:after {
+  //   content: ''; /* Add content after the element */
+  //   position: absolute; /* Position absolute for pseudo-element */
+  //   width: 40px; /* Full width */
+  //   transform: scaleX(0); /* Initial scale of 0 for underline effect */
+  //   height: 2px; /* Height of the underline */
+  //   bottom: 0; /* Align to bottom */
+  //   left: 0; /* Align to left */
+  //   background-color: #ABF5F5; /* Background color of the underline */
+  //   transform-origin: bottom right; /* Set transform origin */
+  //   transition: transform 0.25s ease-out; /* Transition effect for the underline */
+  // }
+  
+  // .hover-underline-animation:hover:after {
+  //   transform: scaleX(1); /* Scale the underline on hover */
+  //   transform-origin: bottom left; /* Set transform origin */
+  // }
+  
+
+  .white{
+    background-color: white;
+  }
+
+  .active {
+    z-index: 9999;
+    height: 20px;
+    width: 50px;
+    margin-top: 10px;
+      div {
+        @include breakpoint(tab) {
+          width:40px;
+          height: 4px;
+          background-color: #ABF5F5;  
+      }
+      
+    }
+  }
+
+  .one{
+    animation-name: example;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+  .three {
+    animation: examples;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  .two {
+     display: none;
+  }
+
+  .black {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #08111E;
+    z-index:9;
+    top: 45px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .linkers {
+    display: block;
+    position: relative;
+  }
+
+  .Link-list {
+    li {
+      font-size: 32px;
+      cursor: pointer;
+      text-align: center;
+      margin: 20px 10px;
+      &:hover {
+        color: #ABF5F5;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .white {
+    background-color: white;
+  }
+
+  @keyframes example {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(45deg);
+        position: relative;
+        top:2px;
+    }
+  }
+
+  @keyframes examples{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-45deg);}
+  }  
+
+  @keyframes reverseexample {
+    from {transform: rotate(45deg);}
+    to {transform: rotate(0deg);
+        position: relative;
+        top:0px;
+    }
+  }
+
+  @keyframes reverseexamples{
+    from {transform: rotate(-45deg);}
+    to {transform: rotate(0deg);}
+  }  
+
+  .ham-top {
+    animation-name: reverseexample;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  .ham-mid {
+    display: block;
+ }
+
+ .ham-bottom {
+  animation: reverseexamples;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+ }
+
+ .socials {
+  display: flex;
+
+ }
+
+ .social-icon {
+  margin: 10px;
+  font-size: 32px;
+  &:hover {
+    color: #ABF5F5;
+    cursor: pointer;
+  }
+ }
