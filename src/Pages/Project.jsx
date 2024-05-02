@@ -115,14 +115,14 @@ function Project() {
                 </h1>
               <div className="icon-det">
               <div className="flex">
-            <a href="https://github.com/usen-bet/Net-clone.git">
+            <a href="https://github.com/usen-bet/Fone_Ent">
              <button>
               <Pop>
               <span className="ones">View</span> Code
               </Pop>
             </button>   
             </a>    
-            <a href="https://fone-e`nt.vercel.app/Front.htm">
+            <a href="https://fone-ent.vercel.app/Front.htm">
             <button>
               <Pop>
               <span className="ones">View</span> Site

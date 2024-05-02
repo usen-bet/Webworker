@@ -292,3 +292,10 @@ body{
     left: 50%;
      transform: translateX(-50%);
   }
+
+  .load {
+    @include breakpoint(rmob){
+        position: relative;
+        bottom: 50px;
+    }
+  }
