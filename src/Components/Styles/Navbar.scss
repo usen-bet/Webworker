@@ -1,5 +1,5 @@
 $breakpoints: (
-  "mob": "(max-width: 300px)",
+  "mob": "(max-width: 400px)",
   "sm": "(max-width: 500px)",
   "tab" : "(max-width: 1000px)",
   "x-tab" : "(min-width: 1000px)",
@@ -24,6 +24,14 @@ $breakpoints: (
     }
 };
 
+li {
+  display: flex;
+  justify-content: center;
+  @include breakpoint(mob) {
+    display: block !important;
+  }
+}
+
 
 ///Hamburger Menu
 .hamburger {
@@ -46,32 +54,6 @@ $breakpoints: (
     }
     
   }
-
-  // .hover-under::after {
-  //   content: '';
-  //   width: 40px;
-  //   height: 40px;
-  //   background-color: #ABF5F5;
-  // }
-
-  // .hover-underline-animation:after {
-  //   content: ''; /* Add content after the element */
-  //   position: absolute; /* Position absolute for pseudo-element */
-  //   width: 40px; /* Full width */
-  //   transform: scaleX(0); /* Initial scale of 0 for underline effect */
-  //   height: 2px; /* Height of the underline */
-  //   bottom: 0; /* Align to bottom */
-  //   left: 0; /* Align to left */
-  //   background-color: #ABF5F5; /* Background color of the underline */
-  //   transform-origin: bottom right; /* Set transform origin */
-  //   transition: transform 0.25s ease-out; /* Transition effect for the underline */
-  // }
-  
-  // .hover-underline-animation:hover:after {
-  //   transform: scaleX(1); /* Scale the underline on hover */
-  //   transform-origin: bottom left; /* Set transform origin */
-  // }
-  
 
   .white{
     background-color: white;
@@ -113,7 +95,7 @@ $breakpoints: (
     position: absolute;
     background-color: #08111E;
     z-index:9;
-    top: 45px;
+    top: 0px;
     justify-content: center;
     align-items: center;
   }
@@ -194,4 +176,10 @@ $breakpoints: (
     color: #ABF5F5;
     cursor: pointer;
   }
+ }
+
+ .center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
  }

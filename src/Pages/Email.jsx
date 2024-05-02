@@ -6,7 +6,9 @@ import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import {Pop} from "../Components/Animations/Pop"
+import { Reveal } from "./Animations/Reveal";
+import { RevealPurple } from "./Animations/RevealPurple";
 
 function Email() {
   const notify = () => toast("Email sent");
@@ -50,28 +52,40 @@ function Email() {
       <Header />
       <div className='head'>
     <div className='top-right'>
+      <Reveal>
       <img src={Circles} className='img1' alt="lightwork" />
+      </Reveal>
     </div>
     <div className='bottom-mid'>
+      <Reveal>
       <img src={Circles} className='img1' alt="lightwork" />
+      </Reveal>
     </div>
     <div className='top-left pick'>
+      <RevealPurple>
       <img src={Circles} className='img1' alt="lightwork" />
+      </RevealPurple>
     </div>
     <div className='bottom-right clap'>
+      <Reveal>
       <img src={Circles} className='img1' alt="lightwork" />
+      </Reveal>
     </div>
     <div className='top-mid'>
+      <RevealPurple>
       <img src={Circles} className='img1' alt="lightwork" />
+      </RevealPurple>
     </div>
     <div className='bottom-left'>
+      <Reveal>
       <img src={Circles} className='img1' alt="lightwork" />
+      </Reveal>
     </div>   
     </div>  
     <main className="main mains">
       <div className="sendEmail">
-        <form action="" ref={form} className="form" onSubmit={sendEmail}>
-        <h1>Email me</h1>
+          <form action="" ref={form} className="form" onSubmit={sendEmail}>
+        <h1 className="flex tit"><Pop>Email me</Pop></h1>
         <input 
         type="text" 
         onChange={change} 

@@ -1,5 +1,5 @@
 $breakpoints: (
-  "mob": "(max-width: 300px)",
+  "mob": "(max-width: 400px)",
   "sm": "(max-width: 500px)",
   "tab" : "(max-width: 1000px)",
   "semi" : "(max-width: 690px)",
@@ -86,7 +86,7 @@ $breakpoints: (
     position: absolute;
     background-color: #08111E;
     z-index:9;
-    top: 45px;
+    top: 0px;
     justify-content: center;
     align-items: center;
     display: flex;

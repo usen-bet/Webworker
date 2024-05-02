@@ -1,5 +1,6 @@
 $breakpoints: (
-    "mob": "(max-width: 300px)",
+    "mob": "(max-width: 400px)",
+    "rmob": "(max-width: 400px)",
     "sm": "(max-width: 500px )",
     "md": "(min-width: 601px) and (max-width: 1000px )",
     "md-lg": "(min-width:601px)" and "(max-width:770px)",
@@ -24,11 +25,30 @@ $breakpoints: (
 
 textarea {
     resize: none;
+@include breakpoint(rmob) {
+    position: relative;
+    top: 20px;
+    margin-bottom: 20px;
+}
 }
 
 form {
     display: grid;
     place-content: center;
+    @include breakpoint(rmob) {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        height: 90%;
+    }
+    h1 {
+        @include breakpoint(rmob) {
+           font-size: 24px !important;
+           position: relative;
+           top: 45px !important;
+        }
+    }
 }
 
 form h1 {
@@ -59,6 +79,9 @@ form h1 {
     @include breakpoint(inf) {
         width: 50% !important;
     }
+    @include breakpoint(rmob) {
+        height: 75%;
+    }
 }
 
 .Text {
@@ -70,6 +93,11 @@ form h1 {
     @include breakpoint(inf) {
         padding: 20px;
         width: 450px;
+    }@include breakpoint(rmob) {
+        width: 170px;
+        height: 35px;
+        position: relative;
+        top: 20px;
     }
 }
 

@@ -1,5 +1,6 @@
 $breakpoints: (
-    "mob": "(max-width: 300px)",
+    "mob": "(max-width: 400px)",
+    "rmob": "(max-width: 300px)",
     "sm": "(max-width: 500px )",
     "tab": "(max-width: 1000px)",
     "md": "(min-width: 601px) and (max-width: 1000px )",
@@ -54,6 +55,15 @@ $breakpoints: (
    transform: translateX(-50%);
    border-radius: 20px;
    background-color: #091324;
+   @include breakpoint(rmob) {
+    height: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+   }
 }
 
 .project-page {
@@ -83,6 +93,9 @@ $breakpoints: (
     @include breakpoint(tab) {
         height: 50%;
     }
+    @include breakpoint(rmob) {
+        height: 37%;
+    }
 }
 
 .reg-bg {
@@ -102,6 +115,11 @@ $breakpoints: (
 .reg-bg h1 {
     font-size: 55px;
     margin-bottom: 0px;
+    @include breakpoint(rmob) {
+       font-size: 24px;
+       position: relative;
+       top: 20px;
+    }
 }
 
 .reg-bg button {
@@ -115,6 +133,17 @@ $breakpoints: (
     &:hover {
         background-color: #132037;
         color: white;
+    }
+    @include breakpoint(rmob){
+        font-size: 12px;
+        padding: 2px 15px;
+        border-radius: 6px;
+    }
+}
+
+.ones {
+    @include breakpoint(rmob) {
+        display: none;
     }
 }
 
@@ -244,4 +273,19 @@ $breakpoints: (
   .Icon-l-size {
     font-size:20px;
     margin: 0px 5px;
+  }
+
+  .flex{
+    display: flex;
+  }
+
+  .icon-det {
+    @include breakpoint(rmob){
+        position: relative;
+        top: 30px;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }

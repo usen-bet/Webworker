@@ -1,5 +1,5 @@
 $breakpoints: (
-    "mob": "(max-width: 300px)",
+    "mob": "(max-width: 400px)",
     "sm": "(max-width: 500px )",
     "tab" : "(max-width: 1000px)",
     "semi" : "(max-width: 690px)",
@@ -43,6 +43,8 @@ $breakpoints: (
     position: absolute;
     right: 0px;
     z-index: 2;
+    height: 61px;
+    align-items: center;
     @include breakpoint(sm) {
      display: none;
     }

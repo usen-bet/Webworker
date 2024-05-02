@@ -10,6 +10,13 @@ import { IoLogoJavascript } from "react-icons/io";
 import Circles from "../assets/Pictures/Circles.svg"
 import './Styles/Intro.scss';
 import "./Styles/Skills.scss"
+import { Reveal } from "./Animations/Reveal";
+import { RevealPurple } from "./Animations/RevealPurple";
+import { Fastvert } from "./Animations/Fastvert"
+import { Pop } from "./Animations/Pop"
+import { Topvert } from "./Animations/Topvert"
+import { Downvert } from "./Animations/Downvert"
+import { Midvert } from "./Animations/Midvert";
 
 function Skills() {
   return (
@@ -17,61 +24,105 @@ function Skills() {
       <Header />
       <div className='head'>
     <div className='top-right'>
+      <Reveal>
       <img src={Circles} className='img1' alt="lightwork" />
+      </Reveal>
     </div>
     <div className='bottom-mid'>
+      <Reveal>
       <img src={Circles} className='img1' alt="lightwork" />
+      </Reveal>
     </div>
     <div className='top-left'>
+      <RevealPurple>
       <img src={Circles} className='img1' alt="lightwork" />
+      </RevealPurple>
     </div>
     <div className='bottom-right'>
+      <Reveal>
       <img src={Circles} className='img1' alt="lightwork" />
+      </Reveal>
     </div>
     <div className='top-mid'>
-      <img src={Circles} className='img1' alt="lightwork" />
+      <RevealPurple>
+        <img src={Circles} className='img1' alt="lightwork" />
+      </RevealPurple>
     </div>
     <div className='bottom-left'>
-      <img src={Circles} className='img1' alt="lightwork" />
+      <RevealPurple>
+        <img src={Circles} className='img1' alt="lightwork" />
+      </RevealPurple>
     </div>   
     </div>  
     <main className="main next">
     <div className="icon">
-    <h1 className="icon-title">Skills</h1>    
+    <h1 className="icon-title"><Pop>Skills</Pop></h1>    
     <div className="icon-half">
     <div className="icon-skill">
+    <Fastvert>
     <IoLogoJavascript className="icon-size" />
-    Javascript
+    </Fastvert>
+    <Pop>
+    <span>Javascript</span>
+    </Pop>
     </div>
     <div className="icon-skill">
+    <Topvert>
     <FaReact className="icon-size" />
-    Reactjs
+    </Topvert>
+    <Pop>
+    <span>Reactjs</span>
+    </Pop>
     </div>
     <div className="icon-skill">
+    <Downvert>
     <FaHtml5 className="icon-size" />
-    HTML
+    </Downvert>
+    <Pop>
+    <span>HTML</span>
+    </Pop>
     </div>
     <div className="icon-skill">
+    <Midvert>
     <FaCss3 className="icon-size" />
-    CSS
+    </Midvert>
+    <Pop>
+      <span>CSS</span>
+    </Pop>
     </div>
     </div>
     <div className="icon-half">
     <div className="icon-skill">
+    <Fastvert>
     <TbBrandNextjs className="icon-size" />
-    Nextjs
+    </Fastvert>
+    <Pop>
+      <span>Nextjs</span>
+    </Pop>
     </div>
     <div className="icon-skill">
+    <Fastvert>
     <SiPrismic className="icon-size" />
-    Prismic.io
+    </Fastvert>
+    <Pop>
+      <span>Prismic.io</span>
+    </Pop>
     </div>
     <div className="icon-skill">
+    <Topvert>
     <SiFirebase  className="icon-size"/>
-    Firebase
+    </Topvert>
+    <Pop>
+      <span>Firebase</span>
+    </Pop>
     </div>
     <div className="icon-skill">
+    <Downvert>
     <SiVite className="icon-size" />
-    Vite
+    </Downvert>
+    <Pop>
+      <span>Vite</span>
+    </Pop>
     </div>
     </div>
     </div>

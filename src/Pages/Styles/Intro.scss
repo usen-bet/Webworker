@@ -1,7 +1,8 @@
 $breakpoints: (
-    "mob": "(max-width: 300px)",
+    "mob": "(max-width: 400px)",
+    "rmob": "(max-width: 300px)",
     "sm": "(max-width: 500px )",
-    "md": "(min-width: 601px) and (max-width: 1000px )",
+    "md": "(min-width: 601px)" and "(max-width: 1000px )",
     "md-lg": "(min-width:601px)" and "(max-width:770px)",
     "lg-md": "(min-width:770px)" and "(max-width:1000px)", 
     "lg": "(min-width:1001px )",  
@@ -45,6 +46,9 @@ body{
         top: 52px;
         left: 86px;
     }
+    @include breakpoint(rmob){
+        display: none;
+    }
 }
 
 .tl {
@@ -60,6 +64,9 @@ body{
     @include breakpoint(mob) {
         top: -5px;
         left: -118px;        
+    }
+    @include breakpoint(rmob){
+        display: none;
     }
 }
 
@@ -77,6 +84,9 @@ body{
         top: 12px;
         left: 86px;        
     }
+    @include breakpoint(rmob){
+        display: none;
+    }
 }
 
 .bm {
@@ -92,6 +102,9 @@ body{
     @include breakpoint(mob) {
         top: 12px;
         left: 86px;        
+    }
+    @include breakpoint(rmob){
+        display: none;
     }
 }
 
@@ -109,6 +122,9 @@ body{
         top: 12px;
         left: 86px;        
     }
+    @include breakpoint(rmob){
+        display: none;
+    }
 }
 
 .bl {
@@ -124,6 +140,9 @@ body{
     @include breakpoint(mob) {
         top:-45px;
         left: -141px;        
+    }
+    @include breakpoint(rmob){
+        display: none;
     }
 }
 
@@ -275,23 +294,35 @@ body{
   .main {
     background-color: #091324;
     width: 70vw;
-    height: 90vh;
+    height: 80vh;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 20px;
     padding-top: 100px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    @include breakpoint(sm) {
+        width: 80vw;
+    }
+    @include breakpoint(mob) {
+        width: 90vw;
+    }
     p {
        margin: 0px 50px;
        font-size: 36px;
        font-weight: normal;
        font-family: helvetinorm;
-       @include breakpoint (sm) {
-        font-size: 20px;
+       @include breakpoint(sm) {
+        font-size: 14px;
+        margin: 0px 30px;
        }
        @include breakpoint(md) {
-        font-size: 24px;        
+        font-size: 20px;  
+        margin: 0 30px;      
        }
     }
   }
@@ -304,6 +335,23 @@ body{
     font-size: 56px;
     font-weight: 800;
     font-family: helvetibold;
-    margin: 50px; 
-    line-height: 77px;   
+    margin: 0px 0px 50px 50px; 
+    line-height: 77px;  
+    @include breakpoint(sm) {
+        font-size: 20px;
+        line-height: 20px;
+        // margin: 30px 30px;
+    }
+    @include breakpoint (md) {
+        font-size: 34px;
+        margin: 30px 30px;
+    }
+    @include breakpoint(mob) {
+        font-size: 24px;
+        margin:20px 30px;
+    }
+  }
+
+  .typi {
+    font-size: 24px;
   }

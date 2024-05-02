@@ -4,6 +4,14 @@ import "./Styles/Navbar.scss"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { FaXTwitter, FaWhatsapp, FaInstagram, FaLinkedin,FaGithub } from "react-icons/fa6"
+import {RevealPurple} from "./Animations/RevealPurple"
+import {Reveal} from "./Animations/Reveal"
+import { Fastvert } from "./Animations/Fastvert"
+import { Slowvert } from "./Animations/Slowvert"
+import { Midvert } from "./Animations/Midvert"
+import { Topvert } from "./Animations/Topvert"
+import { Downvert } from "./Animations/Downvert"
+import { Pop } from "./Animations/Pop"
 
 function Header() {
   const [unclick, setUnclick] = useState(true)
@@ -16,32 +24,42 @@ function Header() {
     <div className='nav-bar'>
     <Link to="/">
     <div className="navs">
+        <Pop>
         <img 
         src={Logo}
         alt='Image'
-        />  
+        />   
+        </Pop> 
     </div>
     </Link>
         <>
         <div className="nav">
          <div className='link l1 hover-under'>
           <Link to="/Intro">
+          <Pop>
           Intro
+          </Pop>
           </Link>
          </div>
          <div className='link l2'>
           <Link to="/Project">
+          <Pop>
           Projects
+          </Pop>
           </Link>
          </div>
          <div className='link l3'>
           <Link to="/Email">
+          <Pop>
           Send an Email
+          </Pop>
           </Link>
          </div>
          <div className='link l4'> 
           <Link to="/Skills">
+          <Pop>
           Skills
+          </Pop>
           </Link>
          </div>
         </div>
@@ -54,42 +72,72 @@ function Header() {
     </div>
     {
       unclick ? (null) : (
-      <div className="black">
-       <div className="linkers">
+        <div className="black">
+       <div className="linkers"> 
        <ul className="Link-list">
-        <li>
-        <Link to="/">
+        <li> 
+        <Link to="/" className="center">
+        <RevealPurple> 
           Home
-          </Link> 
+        </RevealPurple>   
+        </Link> 
         </li>
         <li>
-          <Link to="/Intro">
+          <Link to="/Intro" className="center">
+          <Reveal> 
           Intro
+        </Reveal> 
           </Link>
         </li>
         <li>
-          <Link to="/Project">
+          <Link to="/Project" className="center">
+          <RevealPurple> 
           Projects
+        </RevealPurple>
           </Link>
         </li>
         <li>
-        <Link to="/Email">
+        <Link to="/Email" className="center">
+        <Reveal> 
           Send an Email
+        </Reveal>
         </Link>
         </li>
         <li>
-        <Link to="/Skills">
+        <Link to="/Skills" className="center">
+        <RevealPurple> 
           Skills
+        </RevealPurple>
         </Link>
         </li>
        </ul>
        </div>
        <div className="socials">
-       <FaXTwitter className="social-icon"/>
-       <FaInstagram className="social-icon"/>
-       <FaLinkedin className="social-icon"/>
-       <FaWhatsapp className="social-icon"/>
-       <FaGithub className="social-icon"/>
+        <a href="https://twitter.com/Wweb3workers">
+        <Fastvert>
+        <FaXTwitter className="social-icon"/>
+        </Fastvert>
+        </a>
+       <a href="">
+         <Slowvert>
+         <FaInstagram className="social-icon"/>
+         </Slowvert>
+        </a>
+        <a href="https://www.linkedin.com/in/betse-usen-3794ba232/">
+        <Downvert>
+        <FaLinkedin className="social-icon"/>  
+        </Downvert>  
+        </a>
+        <a href="https://wa.me/08081955876">
+        <Topvert>
+        <FaWhatsapp className="social-icon"/>  
+        </Topvert> 
+        </a>
+        <a href="https://github.com/usen-bet/">
+        <Midvert>
+        <FaGithub className="social-icon"/>
+        </Midvert>
+        </a>
        </div>
       </div>
       )
